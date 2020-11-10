@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { NavController} from '@ionic/angular';
+import { AppareilsPage } from '../appareils/appareils';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
+@Injectable()
 export class HomePage {
 
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
 
-}
+  onGoToAppareils() {
+    this.navCtrl.navigateForward('AppareilsPage');
+    }
+  }
+
+
